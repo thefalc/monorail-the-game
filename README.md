@@ -1,8 +1,3 @@
-# CakePHP
-
-[![Latest Stable Version](https://poser.pugx.org/cakephp/cakephp/v/stable.svg)](https://packagist.org/packages/cakephp/cakephp)
-[![License](https://poser.pugx.org/cakephp/cakephp/license.svg)](https://packagist.org/packages/cakephp/cakephp)
-[![Bake Status](https://secure.travis-ci.org/cakephp/cakephp.png?branch=master)](http://travis-ci.org/cakephp/cakephp)
 # Monorail as seen on The Genius
 
 Monorail is a two player game from a Korean reality television show called The Genius. The game is played as follows.
@@ -20,3 +15,8 @@ You can read about the project [here](https://thefalc.com/2016/02/monorail-as-se
 ## Technical details
 
 The project runs on the LAMP stack, the backend uses the [CakePHP](http://www.cakephp.org) framework. The frontend is a combination of vanilla Javascript and jQuery. The game itself are painted onto an HTML canvas object.
+
+**Code structure**
+* The backend code keeps track of players, live chat history, and game state. Take a look at the [PagesController](https://github.com/thefalc/monorail-the-game/blob/main/app/Controller/PagesController.php)
+* The frontend pages for laying out the game are can be fond in [app/View/Pages](/tree/main/app/View/Pages).
+* The game logic is available in [monorail.js](/blob/main/app/webroot/js/monorail.js). The game win condition is checked via a recursive function [isWin](https://github.com/thefalc/monorail-the-game/blob/da6985460c6a1cf3c5ae62692e37d13a4233bb9a/app/webroot/js/monorail.js#L672).

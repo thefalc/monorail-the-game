@@ -325,9 +325,7 @@ function CanvasState(canvas) {
       try {
         myState.selection.snapToGrid(this.ctx, myState.shapes);  
       } catch(e) {}
-
-      //console.log("win: " + game.isWin());
-      
+ 
       myState.valid = false;
     }
     myState.dragging = false;
@@ -684,8 +682,6 @@ GameState.prototype.isWin = function(tile, count, seen) {
 
   seen.push(tile);
 
-  //console.log(tile.shapeType + " " + tile.x + ", " + tile.y + " " + seen);
-
   var result = false;
 
   // move only right
@@ -772,8 +768,6 @@ GameState.prototype.getNextTile = function(tile, direction) {
 
     if(s.contains(x, y)) {
       if(s.shapeType == CURVE_TILE) {
-        console.log(direction + " found curve here: ");
-        console.dir(s);
         if(direction == LEFT 
           && (s.angleInRadians == 0 || s.angleInRadians == TWO_SEVENTY_DEGREES)) {
 
@@ -1027,7 +1021,6 @@ function updateGame() {
     inProcess = true;
 
     $.getJSON("/pages/update/" + gameObject.Game.game_key, function(response) {
-      // console.log(response);
       if(response.result == "SUCCESS") {
         inProcess = false;
 
@@ -1104,8 +1097,6 @@ function initGame() {
     var x = cellLocation * cellSize;
     var y = cellLocation * cellSize;
 
-    //console.log("dafsd");
-
     leftStation = new Tile(x, y, cellSize, cellSize, STATION_LEFT_TILE, false);
     canvasState.addTile(leftStation);
 
@@ -1121,7 +1112,6 @@ function initGame() {
     initListeners();
   }
   
-
   if(!gameObject.Game.board && gameObject.Game.player2 != "") {
     gameStart.play();
   }
