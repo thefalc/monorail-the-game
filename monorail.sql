@@ -46,20 +46,6 @@ CREATE TABLE `emails` (
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
---  Table structure for `episodes`
--- ----------------------------
-DROP TABLE IF EXISTS `episodes`;
-CREATE TABLE `episodes` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `episode_number` int(11) NOT NULL,
-  `episode_name` varchar(255) NOT NULL,
-  `air_date` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `episode_number` (`episode_number`),
-  KEY `episode_name` (`episode_name`)
-) ENGINE=MyISAM AUTO_INCREMENT=284 DEFAULT CHARSET=latin1;
-
--- ----------------------------
 --  Table structure for `games`
 -- ----------------------------
 DROP TABLE IF EXISTS `games`;
@@ -86,44 +72,5 @@ CREATE TABLE `games` (
   KEY `public` (`public`),
   KEY `email` (`email`)
 ) ENGINE=MyISAM AUTO_INCREMENT=89 DEFAULT CHARSET=latin1;
-
--- ----------------------------
---  Table structure for `participants`
--- ----------------------------
-DROP TABLE IF EXISTS `participants`;
-CREATE TABLE `participants` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `c1` varchar(255) NOT NULL,
-  `c2` varchar(255) NOT NULL,
-  `c3` varchar(255) NOT NULL,
-  `c4` varchar(255) NOT NULL,
-  `c5` varchar(255) NOT NULL,
-  `c6` varchar(255) NOT NULL,
-  `c7` varchar(255) NOT NULL,
-  `c8` varchar(255) NOT NULL,
-  `c9` varchar(255) NOT NULL,
-  `c10` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=122 DEFAULT CHARSET=latin1;
-
--- ----------------------------
---  Table structure for `words`
--- ----------------------------
-DROP TABLE IF EXISTS `words`;
-CREATE TABLE `words` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `word` varchar(255) NOT NULL,
-  `frequency` int(11) NOT NULL,
-  `episode` int(11) NOT NULL,
-  `show` varchar(255) NOT NULL,
-  `unique` tinyint(4) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `word` (`word`),
-  KEY `frequency` (`frequency`),
-  KEY `episode` (`episode`),
-  KEY `show` (`show`),
-  KEY `unique` (`unique`)
-) ENGINE=MyISAM AUTO_INCREMENT=110529 DEFAULT CHARSET=latin1;
 
 SET FOREIGN_KEY_CHECKS = 1;
