@@ -18,6 +18,6 @@ The project runs on the LAMP stack, the backend uses the [CakePHP](http://www.ca
 
 **Code structure**
 * The backend code keeps track of players, live chat history, and game state. Take a look at the [PagesController](https://github.com/thefalc/monorail-the-game/blob/main/app/Controller/PagesController.php).
-* The frontend pages for laying out the game are can be fond in [app/View/Pages](https://github.com/thefalc/monorail-the-game/tree/main/app/View/Pages).
+* The frontend pages for laying out the game are can be found in [app/View/Pages](https://github.com/thefalc/monorail-the-game/tree/main/app/View/Pages).
 * The game logic is available in [monorail.js](https://github.com/thefalc/monorail-the-game/blob/main/app/webroot/js/monorail.js). The game win condition is checked via a recursive function [isWin](https://github.com/thefalc/monorail-the-game/blob/da6985460c6a1cf3c5ae62692e37d13a4233bb9a/app/webroot/js/monorail.js#L672).
 * The database structure is defined in [monorail.sql](https://github.com/thefalc/monorail-the-game/blob/main/monorail.sql).
